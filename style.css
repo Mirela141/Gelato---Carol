@@ -1,0 +1,219 @@
+:root {
+    --cor-primaria: #6b21a8;
+    --cor-primaria-escura: #4c1d95;
+    --cor-primaria-clara: #f3e8ff;
+    --cor-acento: #a855f7;
+    --cor-fundo: #f8fafc;
+    --cor-superficie: #ffffff;
+    --cor-texto: #1e293b;
+    --cor-texto-suave: #64748b;
+    --cor-borda: #e2e8f0;
+    --sombra-suave: 0 10px 25px -5px rgba(76, 29, 149, 0.08), 0 8px 10px -6px rgba(76, 29, 149, 0.04);
+    --raio-borda: 14px;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+body {
+    background: radial-gradient(circle at top right, #f3e8ff 0%, var(--cor-fundo) 45%);
+    color: var(--cor-texto);
+    line-height: 1.6;
+    min-height: 100vh;
+    padding-bottom: 3rem;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Cabeçalho Moderno com Gradiente */
+header {
+    background: linear-gradient(135deg, #3b0764 0%, #6b21a8 60%, #7e22ce 100%);
+    color: #ffffff;
+    text-align: center;
+    padding: 2rem 1.25rem 2.25rem;
+    border-bottom-left-radius: 24px;
+    border-bottom-right-radius: 24px;
+    box-shadow: 0 10px 20px -5px rgba(59, 7, 100, 0.25);
+}
+
+header h1 {
+    font-size: clamp(1.4rem, 4vw, 1.85rem);
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    margin-bottom: 0.3rem;
+}
+
+header p {
+    font-size: 0.95rem;
+    color: #e9d5ff;
+}
+
+/* Pílula de Status da Conexão */
+#status-conexao {
+    margin-top: 1rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    background-color: rgba(15, 23, 42, 0.45);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.45rem 1rem;
+    border-radius: 999px;
+    transition: all 0.3s ease;
+}
+
+/* Container Principal */
+main {
+    width: 100%;
+    max-width: 560px;
+    margin: 1.75rem auto;
+    padding: 0 1.25rem;
+}
+
+/* Área do Botão de Notificação */
+.acoes-topo {
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+/* Card do Formulário */
+.card-formulario {
+    background-color: var(--cor-superficie);
+    padding: clamp(1.25rem, 4vw, 2rem);
+    border-radius: var(--raio-borda);
+    border: 1px solid var(--cor-borda);
+    box-shadow: var(--sombra-suave);
+}
+
+.card-formulario h2 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    color: var(--cor-primaria-escura);
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid var(--cor-primaria-clara);
+}
+
+/* Campos do Formulário */
+.campo {
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.campo label {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: var(--cor-texto);
+    margin-bottom: 0.45rem;
+}
+
+/* Requisito Obrigatório de Usabilidade Tátil (.min-44) */
+.min-44 {
+    min-height: 44px;
+    min-width: 44px;
+}
+
+input.min-44,
+select.min-44 {
+    width: 100%;
+    padding: 0.65rem 0.9rem;
+    border: 1.5px solid var(--cor-borda);
+    border-radius: 10px;
+    font-size: 1rem;
+    color: var(--cor-texto);
+    background-color: #f8fafc;
+    transition: all 0.2s ease;
+}
+
+input.min-44::placeholder {
+    color: #94a3b8;
+}
+
+input.min-44:hover,
+select.min-44:hover {
+    border-color: #cbd5e1;
+    background-color: #ffffff;
+}
+
+input.min-44:focus,
+select.min-44:focus {
+    outline: none;
+    border-color: var(--cor-acento);
+    background-color: #ffffff;
+    box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.15);
+}
+
+/* Botões Modernos e Responsivos */
+button.min-44 {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 10px;
+    font-size: clamp(0.95rem, 2.5vw, 1.05rem);
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    cursor: pointer;
+    touch-action: manipulation;
+    user-select: none;
+    transition: transform 0.15s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+button.min-44:active {
+    transform: scale(0.98);
+}
+
+/* Botão Principal (Enviar Pedido) */
+.btn-primario {
+    background: linear-gradient(135deg, var(--cor-primaria) 0%, var(--cor-primaria-escura) 100%);
+    color: #ffffff;
+    margin-top: 0.75rem;
+    box-shadow: 0 4px 12px rgba(107, 33, 168, 0.28);
+}
+
+.btn-primario:hover {
+    background: linear-gradient(135deg, #7e22ce 0%, var(--cor-primaria) 100%);
+    box-shadow: 0 6px 16px rgba(107, 33, 168, 0.38);
+    transform: translateY(-1px);
+}
+
+/* Botão Secundário (Ativar Alertas) */
+.btn-secundario {
+    background-color: var(--cor-superficie);
+    color: var(--cor-primaria);
+    border: 1.5px solid #d8b4fe;
+    box-shadow: 0 2px 8px rgba(107, 33, 168, 0.08);
+}
+
+.btn-secundario:hover {
+    background-color: var(--cor-primaria-clara);
+    border-color: var(--cor-acento);
+    transform: translateY(-1px);
+}
+
+/* Responsividade para Tablets e Desktops */
+@media (min-width: 640px) {
+    header {
+        border-bottom-left-radius: 32px;
+        border-bottom-right-radius: 32px;
+        padding: 2.5rem 1.5rem;
+    }
+
+    /* No desktop, o botão de notificação fica centralizado no tamanho do seu conteúdo */
+    .btn-secundario {
+        width: auto;
+        min-width: 260px;
+    }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GelatoArt Repositor — Estoque e Pedidos</title>
+
+    <!-- Otimização no <head> -->
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    <link rel="preload" href="./style.css" as="style">
+
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <header>
+        <h1>GelatoArt Repositor</h1>
+        <p>Sistema de Estoque e Pedidos da Sorveteria</p>
+        <!-- Elemento conectado ao monitoramento de rede no app.js -->
+        <p id="status-conexao">Verificando conexão...</p>
+    </header>
+
+    <main>
+        <section class="acoes-topo">
+            <!-- Botão exigido pela atividade e conectado ao app.js -->
+            <button type="button" id="btn-notificacao" class="min-44 btn-secundario">
+                Ativar Alertas de Reposição
+            </button>
+        </section>
+
+        <section class="card-formulario">
+            <h2>Formulário de Reposição de Sorvetes</h2>
+            <form id="form-reposicao">
+                <div class="campo">
+                    <label for="ponto-venda">Ponto de Venda / Cliente:</label>
+                    <input type="text" id="ponto-venda" class="min-44" placeholder="Ex: Sorveteria Centro" required>
+                </div>
+
+                <div class="campo">
+                    <label for="sabor">Sabor do Sorvete:</label>
+                    <select id="sabor" class="min-44" required>
+                        <option value="">Selecione um sabor...</option>
+                        <option value="chocolate-belga">Chocolate Belga (Caixa 10L)</option>
+                        <option value="morango-silvestre">Morango Silvestre (Caixa 10L)</option>
+                        <option value="pistache">Pistache Artesanal (Caixa 5L)</option>
+                        <option value="creme-baunilha">Creme de Baunilha (Caixa 10L)</option>
+                    </select>
+                </div>
+
+                <div class="campo">
+                    <label for="quantidade">Quantidade (Caixas):</label>
+                    <input type="number" id="quantidade" class="min-44" min="1" max="100" value="1" required>
+                </div>
+
+                <button type="submit" class="min-44 btn-primario">
+                    Registrar Pedido de Reposição
+                </button>
+            </form>
+        </section>
+    </main>
+
+    <script src="./app.js"></script>
+</body>
+</html>
